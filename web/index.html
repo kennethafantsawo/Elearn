@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="$FLUTTER_BASE_HREF">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="StudyForge - Local study application with AI-powered note generation">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="StudyForge">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
+
+    <title>StudyForge</title>
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+        // The value of window.FLUTTER_ENV is injected by flutter build web.
+        // The conditionals below are only needed for local development.
+        if (window.FLUTTER_ENV === undefined) {
+            window.FLUTTER_ENV = {};
+        }
+        window.FLUTTER_ENV.useWasm = true;
+    </script>
+
+    <!-- This script installs service_worker.js to provide PWA functionality to
+         application. For more information, see:
+         https://developers.google.com/web/fundamentals/primers/service-workers -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('flutter-first-frame', function () {
+                navigator.serviceWorker.register('flutter_service_worker.js');
+            });
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="splash/style.css">
+    <meta name="theme-color" content="#1f6feb">
+    <meta name="color-scheme" content="light">
+</head>
+<body>
+    <script>
+        window.addEventListener('hashchange', noBack);
+
+        function noBack() {
+            window.history.forward();
+        }
+    </script>
+    <script src="flutter.js" defer></script>
+</body>
+</html>

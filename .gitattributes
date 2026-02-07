@@ -1,0 +1,55 @@
+# Binaries
+*.dll
+*.exe
+*.exe.run
+*.bat
+*.com
+*.app
+*.so
+*.dylib
+*.deb
+*.dsc
+*.tar.gz
+*.zip
+
+# Files
+.DS_Store
+.gitattributes
+.gitignore
+.gitkeep
+.packages
+.pub
+.pub-cache
+.pubignore
+pubspec.lock
+
+# Directories
+build/
+.dart_tool/
+.flutter/
+.gradle/
+.idea/
+.vscode/
+Coverage/
+ios/.symlinks/
+ios/Flutter/Flutter.podspec
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.xcframework
+ios/Flutter/GeneratedPluginRegistrant.*
+ios/Pods/
+.symlinks/
+.packages
+flutter/
+.pub-cache/
+.pub/
+/build/
+flutter_*.jar
+GeneratedPluginRegistrant.*
+plugins.json
+.flutter-plugins
+.flutter-plugin-dependencies
+
+# Exceptions to above rules.
+!/packages/flutter/lib/src/vectors/material_design_icons.dart
+!/packages/flutter/lib/src/services/platforms/platform_messages_handler.h
+!/packages/flutter/lib/src/services/platforms/platform_messages_handler.m

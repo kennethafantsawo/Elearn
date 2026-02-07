@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'pages/home_page.dart';
+import 'pages/splash_screen.dart';
+import 'theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,11 +17,13 @@ class StudyForgeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'StudyForge',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: const HomePage(),
+      theme: StudyForgeTheme.lightTheme,
+      darkTheme: StudyForgeTheme.darkTheme,
+      themeMode: ThemeMode.system,
+      home: const SplashScreen(),
+      routes: {
+        '/home': (context) => const HomePage(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }
