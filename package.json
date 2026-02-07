@@ -1,0 +1,27 @@
+{
+  "name": "studyforge",
+  "version": "1.0.0",
+  "description": "Local study application with AI-powered note generation",
+  "private": true,
+  "scripts": {
+    "setup": "bash setup.sh",
+    "clean": "flutter clean",
+    "build:runner": "flutter pub run build_runner build",
+    "test": "flutter test",
+    "run:android": "flutter run -d android",
+    "run:ios": "flutter run -d ios",
+    "run:web": "flutter run -d web",
+    "build:apk": "flutter build apk --release",
+    "build:ios": "flutter build ios --release",
+    "build:web": "flutter build web --release"
+  },
+  "keywords": [
+    "flutter",
+    "mobile",
+    "ai",
+    "study",
+    "learning"
+  ],
+  "author": "Kenneth Afantsawo",
+  "license": "MIT"
+}

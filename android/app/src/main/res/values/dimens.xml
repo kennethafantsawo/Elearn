@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_default_padding">16dp</dimen>
+    <dimen name="app_text_size_title">24sp</dimen>
+    <dimen name="app_text_size_subtitle">18sp</dimen>
+    <dimen name="app_text_size_body">14sp</dimen>
+</resources>

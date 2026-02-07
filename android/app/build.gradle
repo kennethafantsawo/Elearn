@@ -1,0 +1,71 @@
+def local_properties = new Properties()
+def local_properties_file = rootProject.file('local.properties')
+if (local_properties_file.exists()) {
+    local_properties_file.withReader('UTF-8') { reader ->
+        local_properties.load(reader)
+    }
+}
+
+def flutter_root = local_properties.getProperty('flutter.sdk')
+if (flutter_root == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutter_engine = local_properties.getProperty('flutter.engine')
+if (flutter_engine == null) {
+    throw new GradleException("Flutter Engine not found. Define location with flutter.engine in the local.properties file.")
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutter_root/packages/flutter_tools/gradle/flutter.gradle"
+
+android {
+    namespace "com.example.studyforge"
+    compileSdkVersion 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.example.studyforge"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-*.pro'
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
